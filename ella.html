@@ -1,0 +1,5915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ella</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        .mainbar {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            padding-left: 12px;
+            background-color: rgb(35, 40, 48);
+            /* border: 1px solid; */
+            /* padding: 1px; */
+        }
+
+        .logobar {
+            height: 6vh;
+            width: max-content;
+            /* border: 1px solid; */
+        }
+
+        .img {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .bar1 {
+            height: 7vh;
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border-radius: 5px;
+            /* border: 1px solid; */
+        }
+
+        #search {
+            height: 7vh;
+            width: 100%;
+            padding-left: 10px;
+            font-family: 'Rubik', sans-serif;
+            border: none;
+
+        }
+
+        .iconbox {
+            height: 7vh;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 5px;
+            /* border: 1px solid; */
+        }
+
+        .icon {
+            font-size: 30px;
+            color: rgb(35, 40, 48);
+            cursor: pointer;
+        }
+
+        .bar2 {
+            height: 11vh;
+            width: max-content;
+            display: flex;
+            /* border: 1px solid white; */
+        }
+
+        .box {
+            height: 11vh;
+            width: max-content;
+            padding-top: 10px;
+            /* border: 1px solid yellow; */
+        }
+
+        .smallbar {
+            height: 5vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid red; */
+        }
+
+        .text2 {
+            white-space: nowrap;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: white;
+        }
+
+        .text3 {
+            white-space: nowrap;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .smallbar2 {
+            height: auto;
+            width: max-content;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            /* padding-top: 11px;    */
+            /* border: 1px solid blue; */
+
+
+        }
+
+        .smallbar2:hover .heart {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .heart {
+            color: white;
+            font-size: 28px;
+            /* margin-left: -25px; */
+            transform: scale(1);
+            transition: all 0.5s;
+        }
+
+
+
+
+
+        .text4 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+
+            padding-top: 15px;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        .mainbar2 {
+            height: 8vh;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 25;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+            background-color: rgb(35, 40, 48);
+            /* border: 1px solid; */
+        }
+
+        .content {
+            height: 7vh;
+            width: 60%;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* border: 1px solid red; */
+        }
+
+        .list {
+            color: white;
+            display: block;
+            font-family: 'Rubik', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+
+
+
+        }
+
+        .list:hover {
+
+            border-bottom: 1px solid white;
+            cursor: pointer;
+        }
+
+        .box2 {
+            height: auto;
+            width: 165%;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            /* flex-direction: column; */
+            padding-top: 20px;
+            visibility: hidden;
+            position: absolute;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            /* border: 1px solid; */
+
+        }
+
+        .list:hover .box2 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .box3 {
+            height: 55vh;
+            width: 150%;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            visibility: hidden;
+            position: absolute;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            opacity: 0;
+            background-color: white;
+            /* border: 1px solid; */
+
+        }
+
+        .list:hover .box3 {
+            visibility: visible;
+            margin-top: 9px;
+            opacity: 1;
+        }
+
+        .box4 {
+            height: 45vh;
+            width: 20%;
+            left: 300px;
+            display: flex;
+            padding-top: 20px;
+            visibility: hidden;
+            position: absolute;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            /* border: 1px solid; */
+
+
+
+        }
+
+        .list:hover .box4 {
+            visibility: visible;
+            margin-top: 9px;
+        }
+
+        .box5 {
+            height: 55vh;
+            width: 20%;
+            display: flex;
+            padding-top: 20px;
+            visibility: hidden;
+            position: absolute;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            /* border: 1px solid; */
+        }
+
+        .list:hover .box5 {
+            visibility: visible;
+            margin-top: 9px;
+        }
+
+        .smallbox2 {
+            height: 12vh;
+            width: 130%;
+            right: -200px;
+            top: 50px;
+            position: absolute;
+            visibility: hidden;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+
+        }
+
+        .content2:hover .smallbox2 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        #right {
+            position: absolute;
+            left: 90%;
+            top: 62px;
+            font-size: 10px;
+            color: black;
+
+        }
+
+
+        .bigtext {
+            height: auto;
+            width: 19%;
+            /* border: 1px solid; */
+
+        }
+
+
+        .spn {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 10px;
+            color: black;
+
+        }
+
+        .content2 {
+            height: auto;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            margin-top: 10px;
+            /* border: 1px solid; */
+        }
+
+        .content5 {
+            height: auto;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            margin-top: 10px;
+            /* border: 1px solid; */
+        }
+
+        .content5:hover {
+            border-bottom: 1px solid white;
+        }
+
+        .content3 {
+            position: absolute;
+            display: inline-block;
+            left: 25px;
+            margin-top: 3px;
+        }
+
+        .content2:hover {
+            border-bottom: 1px solid black;
+        }
+
+        .list2 {
+            color: black;
+            position: relative;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+        }
+
+        .list3 {
+            color: black;
+            position: relative;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            color: white;
+            cursor: pointer;
+        }
+
+
+
+        #icon {
+            position: absolute;
+            left: 90%;
+            top: 140px;
+            font-size: 10px;
+            color: black;
+        }
+
+        #icon2 {
+            position: absolute;
+            left: 90%;
+            top: 198px;
+            font-size: 10px;
+            color: black;
+        }
+
+        #icon3 {
+            position: absolute;
+            left: 90%;
+            top: 225px;
+            font-size: 10px;
+            color: black;
+        }
+
+        #icon4 {
+            position: absolute;
+            left: 90%;
+            top: 250px;
+            font-size: 10px;
+            color: black;
+        }
+
+        #icon5 {
+            position: absolute;
+            left: 90%;
+            top: 276px;
+            font-size: 10px;
+            color: black;
+        }
+
+        .smallbox3 {
+            height: 12vh;
+            width: 130%;
+            right: -200px;
+            top: 130px;
+            position: absolute;
+            visibility: hidden;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+
+
+        }
+
+        .content2:hover .smallbox3 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .smallbox4 {
+            height: 14vh;
+            width: 130%;
+            right: -200px;
+            top: 180px;
+            position: absolute;
+            visibility: hidden;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+
+
+        }
+
+        .content2:hover .smallbox4 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .smallbox5 {
+            height: 14vh;
+            width: 130%;
+            right: -200px;
+            top: 210px;
+            position: absolute;
+            visibility: hidden;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+
+
+        }
+
+        .content2:hover .smallbox5 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .smallbox6 {
+            height: 14vh;
+            width: 130%;
+            right: -200px;
+            top: 240px;
+            position: absolute;
+            visibility: hidden;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+
+
+        }
+
+        .content2:hover .smallbox6 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .smallbox7 {
+            height: 14vh;
+            width: 130%;
+            right: -200px;
+            top: 265px;
+            position: absolute;
+            visibility: hidden;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            border: 1px solid rgb(190, 189, 189);
+
+
+        }
+
+        .content2:hover .smallbox7 {
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .box6 {
+            height: 65vh;
+            width: 165%;
+            left: 0;
+            display: flex;
+            justify-content: space-evenly;
+
+            padding-top: 20px;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            /* border: 1px solid; */
+
+
+
+        }
+
+        .list:hover .box6 {
+            visibility: visible;
+            margin-top: 9px;
+            opacity: 1;
+        }
+
+
+        .bigtext2 {
+            height: 60vh;
+            width: 18%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            /* border: 1px solid; */
+            padding: 1px;
+
+        }
+
+
+        .bigbox {
+            height: 25vh;
+            width: 100%;
+            overflow: hidden;
+            /* border: 1px solid; */
+
+        }
+
+        .bigtext2s {
+            height: 60vh;
+            width: 18%;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            /* border: 1px solid; */
+            padding: 1px;
+
+        }
+
+        .bigbox2 {
+            height: 25vh;
+            width: 100%;
+            overflow: hidden;
+            /* border: 1px solid; */
+        }
+
+        .img5 {
+            height: 100%;
+            width: 100%;
+            transform: scale(1);
+            transition: all 1.0s;
+        }
+
+        .bigbox2:hover .img5 {
+            transform: scale(1.05);
+        }
+
+
+
+        .imgbox {
+            height: 20vh;
+            width: 60%;
+            margin-top: 20px;
+            /* border: 1px solid; */
+        }
+
+        .img2 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .imgbox2 {
+            height: 10vh;
+            width: 100%;
+            /* border: 1px solid; */
+
+        }
+
+        .textbox {
+            height: 3vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            /* border: 1px solid; */
+        }
+
+        .text5 {
+            padding-top: 8px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+
+        .imgbox3 {
+            height: 5vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            /* border: 1px solid; */
+        }
+
+        .img3 {
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+        }
+
+        .circle {
+            height: 29px;
+            width: 29px;
+            border-radius: 100px;
+            /* border: 1px solid; */
+        }
+
+        .line {
+            height: 2px;
+            width: 100%;
+            border: 1px solid;
+        }
+
+        .bigtext3 {
+            height: 50vh;
+            width: 15%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid;
+            /* padding: 1px; */
+
+
+        }
+
+        .img4 {
+            height: 100%;
+            width: 100%;
+            transform: scale(1);
+            transition: all 1.0s;
+
+        }
+
+        .bigtext3:hover .img4 {
+            transform: scale(1.08);
+
+
+        }
+
+
+        .ellabox {
+            height: 15vh;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            visibility: hidden;
+            position: absolute;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            background-color: white;
+            /* border: 1px solid; */
+
+
+
+
+
+
+
+        }
+
+        .list:hover .ellabox {
+            visibility: visible;
+            margin-top: 9px;
+
+        }
+
+
+
+        .smallbox {
+            height: 7vh;
+            width: 15%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .minibox {
+            height: 5vh;
+            width: 55%;
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: -5px;
+            transition: all 0.1s linear;
+            cursor: pointer;
+            /* border: 1px solid; */
+        }
+
+        .minibox:hover .minibox2 {
+            visibility: visible;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .text6 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: bolder;
+            color: white;
+        }
+
+        .circle2 {
+            height: 20px;
+            width: 20px;
+            /* border: 1px solid; */
+            border-radius: 100px;
+        }
+
+        .img6 {
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+        }
+
+        .down {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .minibox2 {
+            height: 8vh;
+            width: 65%;
+            left: -20px;
+            top: 30px;
+            display: flex;
+            visibility: hidden;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: absolute;
+            background-color: white;
+            border: 1px solid rgb(214, 214, 214);
+        }
+
+        .minibox3 {
+            height: 20vh;
+            width: 80%;
+            left: 50px;
+            top: 30px;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: absolute;
+            background-color: white;
+            border: 1px solid rgb(214, 214, 214);
+        }
+
+        .minibox:hover .minibox3 {
+            visibility: visible;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:1071px) {
+            .content {
+                width: 80%;
+            }
+
+            .smallbox {
+                width: 20%;
+            }
+
+            .box2 {
+                width: 100%;
+            }
+
+            .list2 {
+                font-size: 10px;
+            }
+
+            .spn {
+                white-space: nowrap;
+                font-size: 12px;
+            }
+
+            .box3 {
+                width: 100%;
+            }
+
+            .box6 {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:1031px) {
+            .mainbar {
+                display: none;
+
+            }
+
+            .mainbar2 {
+                display: none;
+
+            }
+
+        }
+
+        .mainbar3 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 1px;
+            background-color: white;
+            display: none;
+
+            /* border: 1px solid; */
+
+        }
+
+        .childbox {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            /* border: 1px solid; */
+        }
+
+        .iconbox2 {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* border: 1px solid; */
+        }
+
+        .meun {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .logobox {
+            height: auto;
+            width: 50%;
+            /* display: flex; */
+
+            /* border: 1px solid; */
+        }
+
+        .img7 {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:1031px) {
+            .mainbar3 {
+                height: 8vh;
+                width: 100%;
+                display: flex;
+
+
+            }
+
+            .meun {
+                font-size: 20px;
+            }
+
+        }
+
+        .parent1 {
+            height: 70vh;
+            width: auto;
+            display: flex;
+            align-items: center;
+            background-image: url(https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-slider-1-min.jpg?v=1635393625&width=1370);
+            /* border: 1px solid; */
+            padding: 1px;
+        }
+
+        .childbox2 {
+            height: auto;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 15px;
+            margin-left: 10%;
+            /* border: 1px solid white; */
+        }
+
+        .textbox {
+            height: auto;
+            width: max-content;
+            /* border: 1px solid white; */
+        }
+
+        .btext {
+            font-family: 'Rubik', sans-serif;
+            font-size: 40px;
+            font-weight: bolder;
+            color: white;
+        }
+
+        .textbox2 {
+            height: auto;
+            width: auto;
+            margin-left: 5px;
+            /* border: 1px solid white; */
+        }
+
+        .para {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: white;
+        }
+
+        .button {
+            height: 7vh;
+            width: max-content;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            background-color: #f84248;
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+            transition: all 1s;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:338px) {
+            .btext {
+                font-size: 25px;
+            }
+        }
+
+        .parent2 {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;
+            /* border: 1px solid; */
+        }
+
+        .childbox3 {
+            height: auto;
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            /* border: 1px solid yellow; */
+        }
+
+        .imgbox2 {
+            height: auto;
+            width: 16%;
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid blue; */
+        }
+
+        .textbox3 {
+            height: auto;
+            width: 100%;
+            position: relative;
+
+            /* border: 1px solid; */
+        }
+
+        .img9 {
+            height: auto;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .clipbox {
+            height: 250px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 20;
+            clip-path: polygon(0 80%, 0% 100%, 18% 100%);
+            background-color: rgba(187, 185, 185, 0.562);
+            /* border: 1px solid; */
+
+        }
+
+
+
+        .textbox4 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid red; */
+
+        }
+
+        .imgbox2:hover .content4 {
+            border-bottom: 1px solid;
+            cursor: pointer;
+        }
+
+        .content4 {
+            height: auto;
+            width: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .spn2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+
+        .spn3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width:800px) {
+            .imgbox2 {
+                width: 33%;
+            }
+
+        }
+
+        @media screen and (max-width:462px) {
+            .imgbox2 {
+                width: 100%;
+            }
+
+        }
+
+        .parnet3 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 50px;
+
+        }
+
+        .chldbox4 {
+            height: 90vh;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-image: url(https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-product-banner-2.jpg?v=1635926720);
+            background-color: gray;
+            clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
+            background-size: cover;
+            /* border: 1px solid; */
+
+        }
+
+        .textbox5 {
+            height: 50vh;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid white; */
+        }
+
+        .headingbox {
+            height: 7vh;
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid white; */
+        }
+
+        .heading {
+            font-family: 'Rubik', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .para2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: white;
+        }
+
+        .smallheading {
+            position: relative;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: white;
+        }
+
+        .button2 {
+            height: 8vh;
+            width: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 15px;
+            border-radius: 5px;
+            background-color: #f84248;
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .button2:hover {
+            background-color: white;
+            color: black;
+            transition: all 1s;
+            cursor: pointer;
+        }
+
+        .playbox {
+            height: 15vh;
+            width: 9%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            position: absolute;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.63);
+        }
+
+        .play {
+            color: white;
+            font-size: 60px;
+            cursor: pointer;
+        }
+
+
+        .chldbox5 {
+            height: 90vh;
+            width: 55%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            /* border: 4px solid; */
+
+        }
+
+        .smallboxes1 {
+            height: 15vh;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* border: 1px solid; */
+
+        }
+
+        .txtbox1 {
+            height: auto;
+            width: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .text7 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .txtbox2 {
+            height: 4vh;
+            width: 22%;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid;
+        }
+
+        .text8 {
+            white-space: nowrap;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            padding-top: 10px;
+            cursor: pointer;
+        }
+
+        .smallboxes2 {
+            height: 60vh;
+            width: 100%;
+            /* margin: auto; */
+            /* margin-top: 50px; */
+            overflow: hidden;
+            border: 3px solid red;
+
+
+        }
+
+        .slidebox {
+            height: 100%;
+            width: 200%;
+            /* border: 3px solid lime; */
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        @keyframes slide {
+            0% {
+                margin-left: 0;
+            }
+
+            16.5% {
+                margin-left: 0;
+            }
+
+            33% {
+                margin-left: -33.3%;
+            }
+
+            49.5% {
+                margin-left: -33.3%;
+            }
+
+            66% {
+                margin-left: -66.6%;
+            }
+
+            82.5% {
+                margin-left: -66.6%;
+            }
+
+            100% {
+                margin-left: -100%;
+            }
+
+
+        }
+
+        .slide {
+            height: 100%;
+            width: 16.6%;
+            /* margin-left: 1%; */
+            /* float: left; */
+            /* overflow: hidden; */
+
+            /* border: 1px solid lime; */
+        }
+
+        .childbox4 {
+            height: 38vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* border: 1px solid white; */
+        }
+
+        .heartbox {
+            height: 4vh;
+            width: 12%;
+            left: -28px;
+            top: 0;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            transform: translateX(0);
+            transition: all 0.5s;
+            /* border: 2px solid black; */
+        }
+
+        .fa {
+            font-size: 16px;
+        }
+
+        .imgbox4:hover .heartbox {
+            visibility: visible;
+            transform: translateX(28px);
+
+
+        }
+
+        .slide:hover .heartbox {
+            opacity: 1;
+            transform: translateX(28px);
+
+        }
+
+        .slide2:hover .heartbox {
+            opacity: 1;
+            transform: translateX(28px);
+
+        }
+
+
+        .imgbox4 {
+            height: 32vh;
+            width: 100%;
+            position: relative;
+
+            /* border: 2px solid black; */
+        }
+
+        .img10 {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .quickbox {
+            height: 4vh;
+            width: 40%;
+            left: 80px;
+            top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            position: absolute;
+            transform: translateY(0);
+            transition: all 0.5s;
+            /* border: 2px solid black; */
+            background-color: rgb(37, 37, 37);
+
+        }
+
+        .texth {
+            font-family: 'Rubik', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: white;
+        }
+
+
+        .slide:hover .button3 {
+            opacity: 1;
+            transform: translateY(-28px);
+
+        }
+
+        .slide2:hover .button3 {
+            opacity: 1;
+            transform: translateY(-28px);
+
+        }
+
+        .slide:hover .quickbox {
+            opacity: 1;
+            transform: translateY(28px);
+
+        }
+
+        .slide2:hover .quickbox {
+            opacity: 1;
+            transform: translateY(28px);
+
+        }
+
+        .txtbox3 {
+            height: 7vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* border: 2px solid black; */
+        }
+
+        .txtbox3:hover .content4 {
+            border-bottom: 1px solid;
+            cursor: pointer;
+        }
+
+        .img11 {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            top: 0;
+            transition: all 1s;
+        }
+
+        .button3 {
+            height: 7vh;
+            width: 80%;
+            left: 36px;
+            top: 160px;
+            font-family: 'Rubik', sans-serif;
+            font-weight: bolder;
+            opacity: 0;
+            transform: translateY(0);
+            transition: all 0.5s;
+            position: absolute;
+            background-color: white;
+            /* border: 1px solid black; */
+        }
+
+        .button3:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+
+
+
+        .imgbox4:hover .img11 {
+            opacity: 1;
+            cursor: pointer;
+
+        }
+
+        .starbox {
+            height: 3vh;
+            width: 50%;
+            /* border: 2px solid; */
+        }
+
+        .star {
+            font-size: 14px;
+            color: yellow;
+        }
+
+        .starbox2 {
+            height: 4vh;
+            width: 50%;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .texth2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            padding-left: 5px;
+        }
+
+        .starbox2s {
+            height: 5vh;
+            width: 80%;
+            margin-top: 5px;
+            display: flex;
+            gap: 5px;
+            /* border: 1px solid; */
+        }
+
+        .circle3 {
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+            border-radius: 100px;
+            /* border: 1px solid; */
+        }
+
+        .img12 {
+            height: 89%;
+            width: 89%;
+            margin-left: -2px;
+            margin-top: -1px;
+            border-radius: 100px;
+        }
+
+        .smallcircle {
+            height: 89%;
+            width: 89%;
+            margin-left: -2px;
+            margin-top: -1px;
+            border-radius: 100px;
+            background-color: gray;
+        }
+
+        .starbox3 {
+            height: 3vh;
+            width: 100%;
+            margin-top: 10px;
+            /* border: 1px solid; */
+        }
+
+        .txth3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: gray;
+        }
+
+        @media screen and (max-width:1071px) {
+            .spn3 {
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (max-width:937px) {
+            .parnet3 {
+                width: 100%;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+            }
+
+            .chldbox4 {
+                width: 100%;
+
+            }
+
+            .playbox {
+                width: 40%;
+            }
+
+            .chldbox5 {
+                width: 100%;
+                padding-top: 50px;
+            }
+
+            .spn3 {
+                font-size: 10px;
+            }
+        }
+
+        @media screen and (max-width:483px) {
+            .smallboxes2 {
+                width: 80%;
+
+            }
+        }
+
+        @media screen and (max-width:483px) {
+            .slidebox {
+                width: 600%;
+                animation-name: slide;
+                animation-duration: 10s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+
+
+            }
+
+
+            @keyframes slide {
+                0% {
+                    margin-left: 0;
+                }
+
+                8% {
+                    margin-left: 0%;
+                }
+
+                16.5% {
+                    margin-left: -100%;
+                }
+
+                24.5% {
+                    margin-left: -100%;
+                }
+
+                33% {
+                    margin-left: -100%;
+                }
+
+                41% {
+                    margin-left: -200%;
+                }
+
+                49.5% {
+                    margin-left: -200%;
+                }
+
+                57.5% {
+                    margin-left: -300%;
+                }
+
+                66% {
+                    margin-left: -300%;
+                }
+
+                74% {
+                    margin-left: -400%;
+                }
+
+                82.5% {
+                    margin-left: -400%;
+                }
+
+                90.5% {
+                    margin-left: -500%;
+                }
+
+                100% {
+                    margin-left: -500%;
+                }
+
+
+
+
+            }
+
+        }
+
+        .parent4 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+            align-items: center;
+            /* border: 1px solid; */
+            padding-top: 50px;
+
+        }
+
+        .childbox6 {
+            height: auto;
+            width: 26%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            /* border: 1px solid; */
+        }
+
+        .img13 {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            transform: scale(1);
+            transition: all 1.0s;
+        }
+
+        .childbox6:hover .img13 {
+            transform: scale(1.1);
+        }
+
+        .txtbox6 {
+            height: auto;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            left: 20%;
+            top: 25%;
+            position: absolute;
+            /* border: 1px solid white; */
+        }
+
+        .minibox4 {
+            height: auto;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid white; */
+        }
+
+        .texth3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: bolder;
+            color: white;
+        }
+
+        .minibox5 {
+            height: auto;
+            width: 60%;
+            /* border: 1px solid white; */
+        }
+
+        .texth4 {
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            font-size: 30px;
+            font-weight: bolder;
+            cursor: pointer;
+            color: white;
+        }
+
+        .line2 {
+            height: 1px;
+            width: 80%;
+            margin-left: 20px;
+            visibility: hidden;
+            border: 1px solid red;
+        }
+
+        .texth4:hover .line2 {
+            visibility: visible;
+        }
+
+        .button4 {
+            height: 7vh;
+            width: 50%;
+            left: 85px;
+            top: 230px;
+            position: absolute;
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: bolder;
+            background-color: #f84248;
+            color: white;
+            border: none;
+            visibility: hidden;
+            transition: all 0.5s;
+            border-radius: 5px;
+
+        }
+
+        .childbox6:hover .button4 {
+            cursor: pointer;
+            visibility: visible;
+        }
+
+        .button4:hover {
+            color: black;
+            background-color: white;
+
+        }
+
+        @media screen and (max-width:1033px) {
+            .childbox6 {
+                width: 40%;
+            }
+
+            .txtbox6 {
+                left: -2%;
+                right: 0;
+            }
+
+            .texth3 {
+                font-size: 10px;
+            }
+
+            .texth4 {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width:645px) {
+            .parent4 {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .childbox6 {
+                width: 100%;
+            }
+
+            .txtbox6 {
+                width: 100%;
+
+            }
+
+            .texth3 {
+                font-size: 12px;
+            }
+
+            .texth4 {
+                font-size: 22px;
+            }
+        }
+
+        .parent5 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row-reverse;
+            padding-top: 50px;
+            /* border: 1px solid; */
+
+
+        }
+
+        .chldbox4s {
+            height: 90vh;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-image: url(https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-product-banner-1.jpg?v=1635926720);
+            background-color: gray;
+            clip-path: polygon(20% 0, 100% 0, 100% 99%, 0 100%);
+            background-size: cover;
+            /* border: 1px solid; */
+
+        }
+
+
+        @media screen and (max-width:937px) {
+            .parent5 {
+                flex-direction: column;
+                flex-wrap: wrap;
+
+
+            }
+
+            .chldbox4s {
+                width: 100%;
+
+            }
+
+            .playbox {
+                width: 40%;
+            }
+
+            .chldbox5 {
+                width: 100%;
+                padding-top: 50px;
+            }
+        }
+
+        .parent6 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 50px;
+            /* border: 1px solid; */
+        }
+
+        .barbox2 {
+            height: auto;
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .childbox7 {
+            height: auto;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .texth5 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: black;
+            cursor: pointer;
+        }
+
+        .line3 {
+            height: 1px;
+            width: 100%;
+            border: 2px solid red;
+        }
+
+        .texth6 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(58, 57, 57, 0.644);
+        }
+
+        .texth6:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .addsbox {
+            height: 80vh;
+            width: 90%;
+            overflow: hidden;
+            /* border: 1px solid red; */
+        }
+
+        .slidebox2 {
+            height: 100%;
+            width: 200%;
+            /* border: 3px solid lime; */
+            animation-name: slide2;
+            animation-duration: 6s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        @keyframes slide2 {
+            0% {
+                margin-left: 0;
+            }
+
+            12.5% {
+                margin-left: 0;
+            }
+
+            25% {
+                margin-left: -25%;
+            }
+
+            37.5% {
+                margin-left: -25%;
+            }
+
+            50% {
+                margin-left: -25%;
+            }
+
+            62% {
+                margin-left: -25%;
+            }
+
+            74% {
+                margin-left: -25%;
+
+            }
+
+            86% {
+                margin-left: -50%;
+
+            }
+
+            100% {
+                margin-left: -50%;
+            }
+        }
+
+        .slide2 {
+            height: 85%;
+            width: 12.6%;
+            margin-left: 20px;
+
+        }
+
+        @media screen and (max-width:1013px) {
+            .barbox2 {
+                width: 100%;
+            }
+
+            .childbox7 {
+                width: max-content;
+            }
+
+        }
+
+
+
+        @media screen and (max-width:431px) {
+            .texth5 {
+                font-size: 12px;
+            }
+
+            .texth6 {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width:850px) {
+            .slidebox2 {
+                width: 400%;
+
+                animation-name: slide2;
+                animation-duration: 15s;
+
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+
+            }
+
+            .slide2 {
+                width: 12%;
+
+
+
+            }
+
+            @keyframes slide2 {
+                0% {
+                    margin-left: 0;
+                }
+
+                12.5% {
+                    margin-left: 0;
+                }
+
+                25% {
+                    margin-left: -50%;
+                }
+
+                37.5% {
+                    margin-left: -50%;
+                }
+
+                50% {
+                    margin-left: -100%;
+                }
+
+                62% {
+                    margin-left: -100%;
+                }
+
+                74% {
+                    margin-left: -150%;
+
+                }
+
+                86% {
+                    margin-left: -150%;
+
+                }
+
+                100% {
+                    margin-left: -400%;
+                }
+            }
+
+            @media screen and (max-width:481px) {
+                .slidebox2 {
+                    width: 800%;
+                    animation-name: slide2;
+                    animation-duration: 15s;
+                    animation-delay: 2s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+
+
+
+                }
+            }
+
+            @keyframes slide2 {
+                0% {
+                    margin-left: 0;
+                }
+
+                2.5% {
+                    margin-left: -100%;
+                }
+
+                12.5% {
+                    margin-left: -100%;
+                }
+
+                15.5% {
+                    margin-left: -200%;
+                }
+
+                25% {
+                    margin-left: -200%;
+                }
+
+                27.5% {
+                    margin-left: -300%;
+                }
+
+                37.5% {
+                    margin-left: -300%;
+                }
+
+                40% {
+                    margin-left: -400%;
+                }
+
+                50% {
+                    margin-left: -400%;
+                }
+
+                52% {
+                    margin-left: -500%;
+                }
+
+                62% {
+                    margin-left: -500%;
+                }
+
+                64% {
+                    margin-left: -600%;
+                }
+
+                74% {
+                    margin-left: -600%;
+
+                }
+
+                76% {
+                    margin-left: -700%;
+                }
+
+                86% {
+                    margin-left: -700%;
+
+                }
+
+                100% {
+                    margin-left: -700%;
+                }
+            }
+
+        }
+
+        .parent7 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            /* border: 1px solid; */
+        }
+
+        .childbox8 {
+            height: 15vh;
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            /* border: 1px solid; */
+        }
+
+        .minibox6 {
+            height: 5vh;
+            width: max-content;
+            /* border: 1px solid; */
+        }
+
+        .text9 {
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: black;
+        }
+
+        .minibox7 {
+            height: 5vh;
+            width: max-content;
+            /* border: 1px solid; */
+        }
+
+        .para4 {
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: black;
+        }
+
+        .childbox9 {
+            height: auto;
+            width: 95%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .imgbox5 {
+            height: 80vh;
+            width: 31%;
+            /* border: 1px solid; */
+        }
+
+        .picbox {
+            height: 38vh;
+            width: 100%;
+            overflow: hidden;
+            /* border: 1px solid; */
+        }
+
+        .img14 {
+            height: 100%;
+            width: 100%;
+            transform: scale(1);
+            transition: all 1.2s;
+        }
+
+        .imgbox5:hover .img14 {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .picbox2 {
+            height: 42vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-left: 20px;
+            border: 1px solid rgb(179, 179, 179);
+        }
+
+        .textbox6 {
+            height: 4vh;
+            width: 100%;
+            /* border: 1px solid; */
+        }
+
+        .texth7 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: black;
+            cursor: pointer;
+        }
+
+        .line4 {
+            height: 1px;
+            width: 96%;
+            visibility: hidden;
+            border: 1px solid black;
+        }
+
+        .texth7:hover .line4 {
+            visibility: visible;
+            cursor: pointer;
+        }
+
+        .textbox7 {
+            height: 3vh;
+            width: 50%;
+            margin-top: -10px;
+            /* border: 1px solid; */
+        }
+
+        .texth8 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: rgb(175, 174, 174);
+        }
+
+        .textbox8 {
+            height: auto;
+            width: 100%;
+            /* border: 1px solid; */
+        }
+
+        .para3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+
+        .textbox9 {
+            height: 3vh;
+            width: max-content;
+            cursor: pointer;
+            /* border: 1px solid; */
+        }
+
+        .texth9 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width:1071px) {
+            .textbox6 {
+                width: 100%;
+            }
+
+            .textbox7 {
+                width: 100%;
+            }
+
+            .texth7 {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width:967px) {
+
+            .childbox9 {
+                width: 100%;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .imgbox5 {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width:551px) {
+            .imgbox5 {
+                width: 100%;
+            }
+        }
+
+        .parent8 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding-top: 30px;
+            /* border: 1px solid; */
+        }
+
+        .childbox11 {
+            height: 15vh;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            /* border: 1px solid; */
+        }
+
+        .minibox8 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .texth10 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: black;
+        }
+
+        .smallboxes3 {
+            height: 7vh;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .insta {
+            font-size: 40px;
+        }
+
+        .minibox9 {
+            height: auto;
+            width: 80%;
+            /* border: 1px solid; */
+        }
+
+        .para4 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+
+        .childbox12 {
+            height: auto;
+            width: 97%;
+            /* border: 1px solid; */
+        }
+
+        .slidebox3 {
+            height: auto;
+            width: 100%;
+            overflow: hidden;
+            /* border: 1px solid red; */
+        }
+
+        .slidebox4 {
+            height: 50vh;
+            width: 200%;
+            /* border: 3px solid lime; */
+            animation-name: slide3;
+
+            animation-duration: 6s;
+
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+
+
+        }
+
+        .slide3 {
+            height: auto;
+            width: 10%;
+            margin-left: 0.2%;
+            overflow: hidden;
+            /* border: 1px solid blue; */
+        }
+
+        @keyframes slide3 {
+            0% {
+                margin-left: 0%;
+            }
+
+            10% {
+                margin-left: 0%;
+            }
+
+            20% {
+                margin-left: -20%;
+            }
+
+            30% {
+                margin-left: -20%;
+            }
+
+            40% {
+                margin-left: -40%;
+            }
+
+            50% {
+                margin-left: -40%;
+            }
+
+            60% {
+                margin-left: -60%;
+            }
+
+            70% {
+                margin-left: -60%;
+            }
+
+            80% {
+                margin-left: -80%;
+            }
+
+            90% {
+                margin-left: -80%;
+            }
+
+            100% {
+                margin-left: -100%;
+            }
+
+
+        }
+
+        .img15 {
+            height: 100%;
+            width: 100%;
+            transform: scale(1);
+            transition: all 1.0s;
+        }
+
+        .slide3:hover .img15 {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .slidebox5 {
+            height: 10vh;
+            width: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            /* border: 1px solid red; */
+        }
+
+        .slidebox6 {
+            height: 10vh;
+            width: 200%;
+            /* border: 3px solid lime; */
+            display: flex;
+
+            align-items: center;
+
+
+        }
+
+
+        .slide4 {
+            height: 15vh;
+            width: 10%;
+            margin-left: 0.2%;
+
+            /* border: 1px solid blue; */
+        }
+
+        .img16 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .button5 {
+            height: 7vh;
+            width: 15%;
+            margin-top: 10px;
+            background-color: #f84248;
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 5px;
+            border: none;
+            transition: all 1s;
+        }
+
+        .button5:hover {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width:976px) {
+            .parent8 {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .slidebox4 {
+                width: 1000%;
+                animation-duration: 10s;
+                animation-name: slide3;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes slide3 {
+                0% {
+                    margin-left: 0%;
+                }
+
+                10% {
+                    margin-left: 0%;
+                }
+
+                20% {
+                    margin-left: -100%;
+                }
+
+                30% {
+                    margin-left: -100%;
+                }
+
+                40% {
+                    margin-left: -200%;
+                }
+
+                50% {
+                    margin-left: -200%;
+                }
+
+                60% {
+                    margin-left: -300%;
+                }
+
+                70% {
+                    margin-left: -300%;
+                }
+
+                80% {
+                    margin-left: -400%;
+                }
+
+                90% {
+                    margin-left: -400%;
+                }
+
+                100% {
+                    margin-left: -500%;
+                }
+
+
+            }
+
+            .slide3 {
+                width: 100%;
+                margin-left: 5px;
+            }
+
+            .minibox9 {
+                width: max-content;
+            }
+
+            .para4 {
+                font-size: 10px;
+            }
+
+            .texth10 {
+                font-size: 15px;
+            }
+
+            .insta {
+                font-size: 20px;
+            }
+
+        }
+
+        @media screen and (max-width:975px) {
+            .slidebox6 {
+                height: 10vh;
+                width: 200%;
+                border: 3px solid lime;
+                animation-name: slide4;
+
+                animation-duration: 6s;
+
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+
+
+                display: flex;
+                align-items: center;
+
+
+
+            }
+
+            .slide4 {
+                height: 10vh;
+                width: 10%;
+                margin-left: 0.2%;
+
+                border: 1px solid blue;
+            }
+
+            @keyframes slide4 {
+                0% {
+                    margin-left: 0%;
+                }
+
+                10% {
+                    margin-left: 0%;
+                }
+
+                20% {
+                    margin-left: -20%;
+                }
+
+                30% {
+                    margin-left: -20%;
+                }
+
+                40% {
+                    margin-left: -40%;
+                }
+
+                50% {
+                    margin-left: -40%;
+                }
+
+                60% {
+                    margin-left: -60%;
+                }
+
+                70% {
+                    margin-left: -60%;
+                }
+
+                80% {
+                    margin-left: -80%;
+                }
+
+                90% {
+                    margin-left: -80%;
+                }
+
+                100% {
+                    margin-left: -100%;
+                }
+
+
+            }
+
+            .button5 {
+                width: 50%;
+            }
+
+
+
+        }
+
+        @media screen and (max-width:642px) {
+            .slidebox6 {
+                width: 1000%;
+                animation-duration: 10s;
+                animation-name: slide4;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes slide4 {
+                0% {
+                    margin-left: 0%;
+                }
+
+                10% {
+                    margin-left: 0%;
+                }
+
+                20% {
+                    margin-left: -100%;
+                }
+
+                30% {
+                    margin-left: -100%;
+                }
+
+                40% {
+                    margin-left: -200%;
+                }
+
+                50% {
+                    margin-left: -200%;
+                }
+
+                60% {
+                    margin-left: -300%;
+                }
+
+                70% {
+                    margin-left: -300%;
+                }
+
+                80% {
+                    margin-left: -400%;
+                }
+
+                90% {
+                    margin-left: -400%;
+                }
+
+                100% {
+                    margin-left: -500%;
+                }
+
+
+            }
+
+            .slide3 {
+                width: 100%;
+                margin-left: 5px;
+            }
+        }
+
+        .parent9 {
+            height: 95vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: rgb(35, 40, 48);
+            padding-top: 20px;
+            /* border: 1px solid; */
+        }
+
+        .childbox13 {
+            height: auto;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .box8 {
+            height: 6vh;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .text10 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .box9 {
+            height: 4vh;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            /* border: 1px solid; */
+        }
+
+        .para6 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: white;
+        }
+
+        .childbox14 {
+            height: auto;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid; */
+        }
+
+        #inp2 {
+            height: 7vh;
+            width: 77%;
+            padding-left: 10px;
+            outline: none;
+        }
+
+        .button6 {
+            height: 7vh;
+            width: 22%;
+            background-color: #f84248;
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            font-weight: bolder;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            transition: all 1s;
+        }
+
+        .button6:hover {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+
+        .childbox15 {
+            height: auto;
+            width: 98%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-top: 40px;
+            /* border: 1px solid; */
+        }
+
+        .childbox16 {
+            height: 50vh;
+            width: 20%;
+
+            /* border: 1px solid; */
+
+        }
+
+        .childbox17 {
+            height: 50vh;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            /* border: 1px solid; */
+        }
+
+
+
+        .spn4 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: bolder;
+            font-size: 16px;
+            color: white;
+            padding-left: 10px;
+        }
+
+        .lastlogobox {
+            height: 5vh;
+            width: 30%;
+            /* border: 1px solid; */
+        }
+
+        .img17 {
+            height: auto;
+            width: 100%;
+        }
+
+        .bar3 {
+            height: 7vh;
+            width: 90%;
+            display: flex;
+            /* justify-content: space-evenly; */
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .bar4 {
+            height: 7vh;
+            width: 90%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .box7 {
+            height: 6vh;
+            width: 18%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .loc {
+            font-size: 25px;
+            color: rgb(93, 95, 99);
+        }
+
+        .para5 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            padding-left: 15px;
+            color: white;
+
+        }
+
+        .circle4 {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+            background-color: rgb(48, 47, 47);
+            border-radius: 100px;
+        }
+
+        .circle4:hover {
+            background-color: white;
+            cursor: pointer;
+
+        }
+
+        .fb {
+            color: rgb(8, 8, 8);
+        }
+
+
+        .barbox3 {
+            height: 10vh;
+            width: 40%;
+            display: flex;
+            justify-content: space-evenly;
+            /* border: 1px solid; */
+        }
+
+        .minibox10 {
+            height: 8vh;
+            width: 11%;
+            /* border: 1px solid; */
+        }
+
+        .visa {
+            font-size: 50px;
+            color: gray;
+        }
+
+        @media screen and (max-width:889px) {
+
+
+            .childbox14 {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+
+
+        }
+        .parent10{
+            height: 15vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(109, 108, 108);
+            /* border: 1px solid;    */
+        }
+        .lastbox2{
+            height: auto;
+            width: 40%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            /* border: 1px solid; */
+        }
+        .para7 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            padding-left: 15px;
+            color: white;
+
+        }
+        .lastbox3{
+            height: auto;
+            width: 28%;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid; */
+        }
+        @media screen and (max-width:1027px) {
+            .parent10{
+                height: 18vh;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .lastbox3{
+                width: 50%;
+            }
+        }
+        @media screen and (max-width:633px) {
+            .parent10{
+                /* height: 18vh; */
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .lastbox3{
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbar">
+        <div class="logobar"><img class="img" src="logo-home-3_100x.png" alt=""></div>
+        <div class="bar1">
+            <input type="text" placeholder="Search the store" id="search">
+            <div class="iconbox"><i class="fa-solid fa-magnifying-glass icon"></i></div>
+        </div>
+        <div class="bar2">
+            <div class="box">
+                <div class="smallbar">
+                    <h4 class="text2">Customer Service</h4>
+                </div>
+                <div class="smallbar">
+                    <h4 class="text3">(090) 123-ELLA </h4>
+
+
+                </div>
+            </div>
+            <div class="box">
+                <div class="smallbar2">
+                    <i class="fa-regular fa-heart heart"></i>
+                    <h5 class="text4">WISH LISTS</h5>
+                </div>
+
+
+
+            </div>
+            <div class="box">
+                <div class="smallbar2">
+                    <i class="fa-regular fa-user heart"></i>
+                    <h5 class="text4">SIGN IN</h5>
+                </div>
+
+
+            </div>
+            <div class="box">
+                <div class="smallbar2">
+                    <i class="fa-solid fa-cart-shopping heart heart1"></i>
+                    <h5 class="text4">CART</h5>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="mainbar2">
+        <ul class="content">
+            <li class="list">THEME DEMONew
+                <div class="box2">
+                    <div class="bigtext">
+                        <span class="spn">Homepages</span>
+                        <ul class="content2">
+                            <li class="list2">Home 01 - Classic</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 02 - Trendy Style </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 03 - In Vogue</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 04 - High Fashion </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 05 - Surfing</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 06 - SuperMarket </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 07 - Electronics</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 08 - Large Catalogs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 09 - Pet Supplies </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 10 - Jewelry</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 11 - Health & Beauty</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 12 - Men Fashion</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 13 - Winter Sport</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Homepages</span>
+                        <ul class="content2">
+                            <li class="list2">Home 01 - Classic</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 02 - Trendy Style </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 03 - In Vogue</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 04 - High Fashion </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 05 - Surfing</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 06 - SuperMarket </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 07 - Electronics</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 08 - Large Catalogs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 09 - Pet Supplies </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 10 - Jewelry</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 11 - Health & Beauty</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 12 - Men Fashion</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 13 - Winter Sport</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Homepages</span>
+                        <ul class="content2">
+                            <li class="list2">Home 01 - Classic</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 02 - Trendy Style </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 03 - In Vogue</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 04 - High Fashion </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 05 - Surfing</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 06 - SuperMarket </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 07 - Electronics</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 08 - Large Catalogs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 09 - Pet Supplies </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 10 - Jewelry</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 11 - Health & Beauty</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 12 - Men Fashion</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 13 - Winter Sport</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Homepages</span>
+                        <ul class="content2">
+                            <li class="list2">Home 01 - Classic</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 02 - Trendy Style </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 03 - In Vogue</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 04 - High Fashion </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 05 - Surfing</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 06 - SuperMarket </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 07 - Electronics</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 08 - Large Catalogs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 09 - Pet Supplies </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 10 - Jewelry</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 11 - Health & Beauty</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 12 - Men Fashion</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 13 - Winter Sport</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Homepages</span>
+                        <ul class="content2">
+                            <li class="list2">Home 01 - Classic</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 02 - Trendy Style </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 03 - In Vogue</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 04 - High Fashion </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 05 - Surfing</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 06 - SuperMarket </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 07 - Electronics</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 08 - Large Catalogs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 09 - Pet Supplies </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 10 - Jewelry</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 11 - Health & Beauty</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 12 - Men Fashion</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 13 - Winter Sport</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </li>
+            <li class="list">SHOP
+                <div class="box3">
+                    <div class="bigtext">
+                        <span class="spn">Collection List Pages</span>
+                        <ul class="content2">
+                            <li class="list2">Collection List 01</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection List 02</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection List 03</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection List 04</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection List 05</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection Detail 01 </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection Detail 02</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Home 08 - Large Catalogs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Collection Detail 03 (Coming Soon)</li>
+                        </ul>
+
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Collection Pages</span>
+                        <ul class="content2">
+                            <li class="list2">Layout 01 - Left Sidebar</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 02 - No Sidebar</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 03 - Right Sidebar</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 04 - Masonry</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 05 - With Banners</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 06 - Express Order </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Main Features</span>
+                        <ul class="content2">
+                            <li class="list2">Dynamic Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Tags Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Horizontal Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Vertical Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Product Compare</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Ajax Infinite Scroll </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Pagination</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">No Sidebar</li>
+                        </ul>
+
+
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Main Features</span>
+                        <ul class="content2">
+                            <li class="list2">Left Sidebar</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Right Sidebar </li>
+                        </ul>
+
+                        <ul class="content2">
+                            <li class="list2"> Sub Collections</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> List View</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Grid View</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Grid 2 Columns</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Grid 3 Columns</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Grid 4 Columns</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Grid 5 Columns</li>
+                        </ul>
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </li>
+
+            <li class="list">PRODUCT
+                <div class="box3">
+                    <div class="bigtext">
+                        <span class="spn">Product Pages</span>
+                        <ul class="content2">
+                            <li class="list2">Layout 01 - Default</li>
+
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 02 - Full Width</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 03 - Grid View</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 04 - Slider</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 05 - Gallery</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 06 - Left Thumb</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 07 - Right Thumb</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Layout 08 - Left Sidebar</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Layout 09 - Right Sidebar</li>
+                        </ul>
+
+
+                    </div>
+
+
+                    <div class="bigtext">
+                        <span class="spn">Main Features</span>
+                        <ul class="content2">
+                            <li class="list2">Dynamic Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Tags Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Horizontal Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Vertical Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Product Compare</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Ajax Infinite Scroll </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Pagination</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">No Sidebar</li>
+                        </ul>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="bigtext">
+                        <span class="spn">Main Features</span>
+                        <ul class="content2">
+                            <li class="list2">Dynamic Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Tags Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Horizontal Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Vertical Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Product Compare</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Ajax Infinite Scroll </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Pagination</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">No Sidebar</li>
+                        </ul>
+
+
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Main Features</span>
+                        <ul class="content2">
+                            <li class="list2">Dynamic Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Tags Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Horizontal Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Vertical Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Product Compare</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Ajax Infinite Scroll </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Pagination</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">No Sidebar</li>
+                        </ul>
+
+
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Main Features</span>
+                        <ul class="content2">
+                            <li class="list2">Dynamic Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Tags Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Horizontal Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Vertical Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Product Compare</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Ajax Infinite Scroll </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Pagination</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">No Sidebar</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </li>
+            <li class="list">BLOG
+                <div class="box4">
+                    <div class="bigtext">
+
+                        <ul class="content2">
+                            <li class="list2">Dynamic Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Tags Filtering</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Horizontal Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Vertical Filter</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Product Compare</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Ajax Infinite Scroll </li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Pagination</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">No Sidebar</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list">PAGES
+                <div class="box5">
+                    <div class="bigtext">
+                        <ul class="content2">
+                            <li class="list2">RTL Layout </li>
+
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">About Us </li>
+                            <i id="right" class="fa-solid fa-chevron-right"></i>
+                            <div class="smallbox2">
+                                <ul class="content2">
+                                    <li class="list2">About Us 1</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">About Us 2</li>
+                                </ul>
+                            </div>
+                        </ul>
+
+
+                        <ul class="content2">
+                            <li class="list2">Brands</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Bulk Editor</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Contact Us</li>
+                            <i id="icon" class="fa-solid fa-chevron-right"></i>
+                            <div class="smallbox3">
+                                <ul class="content2">
+                                    <li class="list2">Contact Us 1</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Contact Us 2</li>
+                                </ul>
+                            </div>
+
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Faqs</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Landing Pages</li>
+                            <i id="icon2" class="fa-solid fa-chevron-right"></i>
+                            <div class="smallbox4">
+                                <ul class="content2">
+                                    <li class="list2">Landing Pages 1</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Landing Pages 2</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Landing Pages 3</li>
+                                </ul>
+                            </div>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Lookbook</li>
+                            <i id="icon3" class="fa-solid fa-chevron-right"></i>
+                            <div class="smallbox5">
+                                <ul class="content2">
+                                    <li class="list2">Lookbook 1</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Lookbook 2 (Coming Soon)</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Lookbook 3 (Coming Soon)</li>
+                                </ul>
+                            </div>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Portfolio</li>
+                            <i id="icon4" class="fa-solid fa-chevron-right"></i>
+                            <div class="smallbox6">
+                                <ul class="content2">
+                                    <li class="list2">Portfolio 1</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Portfolio 2</li>
+                                </ul>
+
+                            </div>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Wishlist
+                            </li>
+                            <i id="icon5" class="fa-solid fa-chevron-right"></i>
+                            <div class="smallbox7">
+                                <ul class="content2">
+                                    <li class="list2">Wishlist (List View)</li>
+                                </ul>
+                                <ul class="content2">
+                                    <li class="list2">Wishlist (Grid View)</li>
+                                </ul>
+
+                            </div>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2">Store Locator
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="list">NEW IN
+                <div class="box6">
+                    <div class="bigtext2">
+                        <div class="bigbox">
+                            <span class="spn">Lorem Dorus</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                        <div class="bigbox">
+                            <span class="spn">Cosmo Milano</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bigtext2">
+                        <div class="bigbox">
+                            <span class="spn">Milancelos Lanos</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                        <div class="bigbox">
+                            <span class="spn">Nor Loremirus</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bigtext2">
+                        <div class="bigbox">
+                            <span class="spn">Lynn Cosmopolis</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                        <div class="bigbox">
+                            <span class="spn">Nor Loremirus</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="bigtext2">
+                        <span class="spn">Featured Products</span>
+                        <div class="imgbox"><img class="img2"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/products/3_d6abb54a-41c9-40ba-bdc3-26dd5a597c60_360x.jpg?v=1635404612"
+                                alt=""></div>
+                        <div class="imgbox2">
+                            <div class="textbox">
+                                <h3 class="text5">TOMORROW®</h3>
+                            </div>
+                            <div class="textbox">
+                                <ul class="content2">
+                                    <li class="list2">(Product 12) Sample-</li>
+                                </ul>
+                            </div>
+                            <div class="textbox">
+
+                                <h3 class="text5">$780.00</h3>
+
+                            </div>
+                        </div>
+                        <div class="imgbox3">
+                            <div class="circle">
+                                <img class="img3" src="gray-teal.png" alt="">
+                            </div>
+                            <div class="circle"><img class="img3" src="dark-gray-custom.png" alt=""></div>
+                        </div>
+                        <div class="imgbox3">
+                            <h3 class="text5">SHOP NOW
+                                <div class="line"></div>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="bigtext3">
+                        <img class="img4"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-1.jpg?v=1635326929"
+                            alt="">
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </li>
+            <li class="list">TREND
+                <div class="box6">
+                    <div class="bigtext2">
+                        <div class="bigbox">
+                            <span class="spn">Lorem Dorus</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                        <div class="bigbox">
+                            <span class="spn">Cosmo Milano</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bigtext2">
+                        <div class="bigbox">
+                            <span class="spn">Milancelos Lanos</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                        <div class="bigbox">
+                            <span class="spn">Nor Loremirus</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bigtext2">
+                        <div class="bigbox">
+                            <span class="spn">Lynn Cosmopolis</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                        <div class="bigbox">
+                            <span class="spn">Nor Loremirus</span>
+                            <ul class="content2">
+                                <li class="list2">Dincidunteros </li>
+                            </ul>
+
+                            <ul class="content2">
+                                <li class="list2"> Loremous</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Comodianos</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Gravidas</li>
+                            </ul>
+                            <ul class="content2">
+                                <li class="list2"> Montemous</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bigtext2s">
+                        <div class="bigbox2">
+                            <img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-2.jpg?v=1635326946"
+                                alt="">
+                        </div>
+                        <div class="bigbox2"><img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-3.jpg?v=1635326960"
+                                alt=""></div>
+
+                    </div>
+                    <div class="bigtext3">
+                        <img class="img4"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-4.jpg?v=1635326973"
+                            alt="">
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list">COLLECTION
+                <div class="box3">
+                    <div class="bigtext">
+                        <span class="spn">Collection List Pages</span>
+
+
+                        <div class="bigbox2">
+                            <img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-5.jpg?v=1635326990"
+                                alt="">
+                        </div>
+                        <ul class="content2">
+                            <li class="list2"> Loremous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Comodianos</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Gravidas</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Collection List Pages</span>
+
+
+                        <div class="bigbox2">
+                            <img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-6.jpg?v=1635327002"
+                                alt="">
+                        </div>
+                        <ul class="content2">
+                            <li class="list2"> Loremous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Comodianos</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Gravidas</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Collection List Pages</span>
+
+
+                        <div class="bigbox2">
+                            <img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-7.jpg?v=1635327016"
+                                alt="">
+                        </div>
+                        <ul class="content2">
+                            <li class="list2"> Loremous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Comodianos</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Gravidas</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Collection List Pages</span>
+
+
+                        <div class="bigbox2">
+                            <img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-8.jpg?v=1635327029"
+                                alt="">
+                        </div>
+                        <ul class="content2">
+                            <li class="list2"> Loremous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Comodianos</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Gravidas</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                    </div>
+                    <div class="bigtext">
+                        <span class="spn">Collection List Pages</span>
+
+
+                        <div class="bigbox2">
+                            <img class="img5"
+                                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-mega-menu-9.jpg?v=1635327040"
+                                alt="">
+                        </div>
+                        <ul class="content2">
+                            <li class="list2"> Loremous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Comodianos</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Gravidas</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                        <ul class="content2">
+                            <li class="list2"> Montemous</li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+
+            </li>
+            <li class="list">COLLECTION
+                <div class="ellabox">
+                    <ul class="content2">
+                        <li class="list2"> Gravidas</li>
+                    </ul>
+                    <ul class="content2">
+                        <li class="list2"> Montemous</li>
+                    </ul>
+                    <ul class="content2">
+                        <li class="list2"> Montemous</li>
+                    </ul>
+                </div>
+            </li>
+
+
+        </ul>
+        <div class="smallbox">
+            <div class="minibox">
+                <div class="circle2">
+                    <img class="img6" src="Flag_of_the_United_Kingdom_(1-2).svg.png" alt="">
+                </div>
+                <h3 class="text6">EN / USD</h3>
+                <i class="fa-solid fa-chevron-down down"></i>
+                <div class="minibox2">
+                    <div class="circle2">
+                        <img class="img6" src="Flag_of_the_United_Kingdom_(1-2).svg.png" alt="">
+                        <ul class="content2 content3">
+                            <li class="list2">EN</li>
+                        </ul>
+                    </div>
+                    <div class="circle2"><img class="img6" src="download (2).png" alt="">
+                        <ul class="content2 content3">
+                            <li class="list2">DE</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="minibox3">
+                    <div class="circle2"><img class="img6" src="Flag_of_the_United_Kingdom_(1-2).svg.png" alt="">
+                        <ul class="content2 content3">
+                            <li class="list2">USB</li>
+                        </ul>
+
+                    </div>
+                    <div class="circle2"><img class="img6" src="download.png" alt="">
+                        <ul class="content2 content3">
+                            <li class="list2">EUR</li>
+                        </ul>
+
+                    </div>
+                    <div class="circle2">
+                        <img class="img6" src="Flag_of_the_United_Kingdom_(1-2).svg.png" alt="">
+                        <ul class="content2 content3">
+                            <li class="list2">GBP</li>
+                        </ul>
+
+                    </div>
+                    <div class="circle2">
+                        <img class="img6" src="download (1).png" alt="">
+                        <ul class="content2 content3">
+                            <li class="list2">CHF</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="mainbar3">
+        <div class="childbox">
+            <div class="iconbox2">
+                <i class="fa-solid fa-bars meun"></i>
+            </div>
+            <div class="iconbox2">
+                <i class="fa-solid fa-magnifying-glass meun"></i>
+            </div>
+        </div>
+        <div class="childbox">
+            <div class="logobox"><img class="img7" src="logo-mb-home-3_small.png" alt=""></div>
+        </div>
+        <div class="childbox">
+            <div class="iconbox2">
+                <i class="fa-solid fa-user meun"></i>
+            </div>
+            <div class="iconbox2">
+                <i class="fa-solid fa-bag-shopping meun"></i>
+            </div>
+        </div>
+    </div>
+    <div class="parent1">
+        <div class="childbox2">
+            <div class="textbox">
+                <h1 class="btext">FORGED SERIES</h1>
+            </div>
+            <div class="textbox2">
+                <p class="para">Quisquemos sodales suscipit tortor ditaemcos condiment de cosmo lacus.</p>
+            </div>
+            <button class="button">SHOP NOW</button>
+        </div>
+    </div>
+    <div class="parent2">
+        <div class="childbox3">
+            <div class="imgbox2">
+                <div class="textbox3">
+                    <img class="img9"
+                        src="./7bf9304a-4301-433f-a65e-87717313d341_1.7e10f3239eb1f06a2d217ea84a1f97e6.webp" alt="">
+                    <div class="clipbox"></div>
+
+
+                </div>
+                <div class="textbox4">
+                    <ul class="content4">
+                        <span class="spn2">COSMOPOLIS</span>
+                    </ul>
+                    <ul class="content4"><span class="spn3">SERIES</span>
+                        <hr class="hr">
+                    </ul>
+
+
+                </div>
+            </div>
+
+            <div class="imgbox2">
+                <div class="textbox3">
+                    <img class="img9"
+                        src="./a46a7272-5e8e-492d-88bd-ad2be3895142_1.21ff7846eeccdaf2d79fabdb56ec52ff.jpeg" alt="">
+                    <div class="clipbox"></div>
+
+
+                </div>
+                <div class="textbox4">
+                    <ul class="content4">
+                        <span class="spn2">COSMOPOLIS</span>
+                    </ul>
+                    <ul class="content4"><span class="spn3">SERIES</span>
+                        <hr class="hr">
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="imgbox2">
+                <div class="textbox3">
+                    <img class="img9" src="./BLACK RHINO BR008 ALPHA 20X10 8 ET-18 MATTE BLACK W SAND LIP-std-700.jpg"
+                        alt="">
+                    <div class="clipbox"></div>
+
+
+                </div>
+                <div class="textbox4">
+                    <ul class="content4">
+                        <span class="spn2">COSMOPOLIS</span>
+                    </ul>
+                    <ul class="content4"><span class="spn3">SERIES</span>
+                        <hr class="hr">
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="imgbox2">
+                <div class="textbox3">
+                    <img class="img9" src="./images.jpg" alt="">
+                    <div class="clipbox"></div>
+
+
+                </div>
+                <div class="textbox4">
+                    <ul class="content4">
+                        <span class="spn2">COSMOPOLIS</span>
+                    </ul>
+                    <ul class="content4"><span class="spn3">SERIES</span>
+                        <hr class="hr">
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="imgbox2">
+                <div class="textbox3">
+                    <img class="img9"
+                        src="./Black-Rhino-Barrage-Wheel-17x8-5-5x127-10mm-Offset-Desert-Sand-On-Matte-Black-DSG-Performance-1_8b533e62-e73e-4cb2-a913-6b9b10aa3742_1024x1024@2x.webp"
+                        alt="">
+                    <div class="clipbox"></div>
+
+
+                </div>
+                <div class="textbox4">
+                    <ul class="content4">
+                        <span class="spn2">COSMOPOLIS</span>
+                    </ul>
+                    <ul class="content4"><span class="spn3">SERIES</span>
+                        <hr class="hr">
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="imgbox2">
+                <div class="textbox3">
+                    <img class="img9"
+                        src="./d4fcac36-87b0-47db-a473-fff2a5abce5e_1.68c88722abec908345b9fac1d2c56419.jpeg" alt="">
+                    <div class="clipbox"></div>
+
+
+                </div>
+                <div class="textbox4">
+                    <ul class="content4">
+                        <span class="spn2">COSMOPOLIS</span>
+                    </ul>
+                    <ul class="content4"><span class="spn3">SERIES</span>
+                    </ul>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="parnet3">
+        <div class="chldbox4">
+            <div class="textbox5">
+                <div class="headingbox">
+                    <h1 class="heading">CARBONIO</h1>
+                </div>
+                <div class="headingbox">
+                    <h3 class="smallheading">FORGEDIO SERIES</h3>
+                </div>
+                <div class="headingbox">
+                    <p class="para2">Phasellus lorem malesuada ligula pulvinar cosmo</p>
+                </div>
+                <div class="button2">SHOP NOW</div>
+                <div class="playbox"><i class="fa-solid fa-play play"></i></div>
+            </div>
+
+        </div>
+        <div class="chldbox5">
+            <div class="smallboxes1">
+                <div class="txtbox1">
+                    <h1 class="text7">NEW PRODUCTS</h1>
+                </div>
+                <div class="txtbox2">
+                    <h4 class="text8">View All</h4>
+
+                </div>
+            </div>
+            <div class="smallboxes2">
+                <div class="slidebox">
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10" src="./l2.jpg" alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="a46a7272-5e8e-492d-88bd-ad2be3895142_1.21ff7846eeccdaf2d79fabdb56ec52ff.jpeg"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="white-red.png" alt=""></div>
+                            <div class="circle3"><img class="img12" src="gray-teal.png" alt=""></div>
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="BLACK RHINO BR008 ALPHA 20X10 8 ET-18 MATTE BLACK W SAND LIP-std-700.jpg"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="Black-Rhino-Barrage-Wheel-17x8-5-5x127-10mm-Offset-Desert-Sand-On-Matte-Black-DSG-Performance-1_8b533e62-e73e-4cb2-a913-6b9b10aa3742_1024x1024@2x.webp"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3"><img class="img12" src="gray-teal.png" alt=""></div>
+
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="d4fcac36-87b0-47db-a473-fff2a5abce5e_1.68c88722abec908345b9fac1d2c56419.jpeg"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10" src="5.jpg" alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parent4">
+        <div class="childbox6">
+            <img class="img13"
+                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-banner-3-1_370x.jpg?v=1635845676" alt="">
+            <div class="txtbox6">
+                <div class="minibox4">
+                    <h3 class="texth3">NEW ARRIVALS</h3>
+                </div>
+                <div class="minibox5">
+                    <h1 class="texth4">SCARVERO
+                        <div class="line2"></div>
+                    </h1>
+                </div>
+                <div class="minibox4">
+                    <h3 class="texth3">from $399*</h3>
+                </div>
+            </div>
+            <button class="button4">SHOP NOW</button>
+        </div>
+        <div class="childbox6"><img class="img13"
+                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-banner-3-2_370x.jpg?v=1635846276" alt="">
+            <div class="txtbox6">
+                <div class="minibox4">
+                    <h3 class="texth3">NEW ARRIVALS</h3>
+                </div>
+                <div class="minibox5">
+                    <h1 class="texth4">VALKYRIO
+                        <div class="line2"></div>
+                    </h1>
+                </div>
+                <div class="minibox4">
+                    <h3 class="texth3">from $499*</h3>
+                </div>
+            </div>
+            <button class="button4">SHOP NOW</button>
+        </div>
+        <div class="childbox6"><img class="img13"
+                src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-banner-3-3_370x.jpg?v=1635846547" alt="">
+            <div class="txtbox6">
+                <div class="minibox4">
+                    <h3 class="texth3">NEW ARRIVALS</h3>
+                </div>
+                <div class="minibox5">
+                    <h1 class="texth4">QUISQUE
+                        <div class="line2"></div>
+                    </h1>
+                </div>
+                <div class="minibox4">
+                    <h3 class="texth3">from $599*</h3>
+                </div>
+            </div>
+            <button class="button4">SHOP NOW</button>
+        </div>
+    </div>
+    <div class="parent5">
+        <div class="chldbox4s">
+            <div class="textbox5">
+                <div class="headingbox">
+                    <h1 class="heading">CARBONIO</h1>
+                </div>
+                <div class="headingbox">
+                    <h3 class="smallheading">FORGEDIO SERIES</h3>
+                </div>
+                <div class="headingbox">
+                    <p class="para2">Phasellus lorem malesuada ligula pulvinar cosmo</p>
+                </div>
+                <div class="button2">SHOP NOW</div>
+                <div class="playbox"><i class="fa-solid fa-play play"></i></div>
+            </div>
+
+        </div>
+        <div class="chldbox5">
+            <div class="smallboxes1">
+                <div class="txtbox1">
+                    <h1 class="text7">NEW PRODUCTS</h1>
+                </div>
+                <div class="txtbox2">
+                    <h4 class="text8">View All</h4>
+
+                </div>
+            </div>
+            <div class="smallboxes2">
+                <div class="slidebox">
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10" src="./l2.jpg" alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="a46a7272-5e8e-492d-88bd-ad2be3895142_1.21ff7846eeccdaf2d79fabdb56ec52ff.jpeg"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="white-red.png" alt=""></div>
+                            <div class="circle3"><img class="img12" src="gray-teal.png" alt=""></div>
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="BLACK RHINO BR008 ALPHA 20X10 8 ET-18 MATTE BLACK W SAND LIP-std-700.jpg"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="Black-Rhino-Barrage-Wheel-17x8-5-5x127-10mm-Offset-Desert-Sand-On-Matte-Black-DSG-Performance-1_8b533e62-e73e-4cb2-a913-6b9b10aa3742_1024x1024@2x.webp"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3"><img class="img12" src="gray-teal.png" alt=""></div>
+
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10"
+                                    src="d4fcac36-87b0-47db-a473-fff2a5abce5e_1.68c88722abec908345b9fac1d2c56419.jpeg"
+                                    alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                    <div class=" slide">
+                        <div class="childbox4">
+                            <div class="imgbox4">
+
+                                <img class="img10" src="5.jpg" alt="">
+                                <img class="img11" src="./k2.jpg" alt="">
+                                <div class="quickbox">
+                                    <h5 class="texth">Quick View</h5>
+                                </div>
+                                <button class="button3">QUICK ADD</button>
+                                <div class="heartbox">
+                                    <i class="fa-regular fa-heart fa"></i>
+                                </div>
+                            </div>
+                            <div class="txtbox3">
+
+                                <span class="spn2">COLLETTE @</span>
+
+                                <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="starbox">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                        </div>
+                        <div class="starbox2">
+                            <h4 class="texth2">$570.00</h4>
+                        </div>
+                        <div class="starbox2s">
+                            <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                            <div class="circle3">
+                                <div class="smallcircle"></div>
+                            </div>
+                            <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                        </div>
+                        <div class="starbox3">
+                            <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="parent6">
+        <div class="barbox2">
+            <div class="childbox7">
+                <h1 class="texth5">BEST SELLERS
+                    <div class="line3"></div>
+                </h1>
+
+            </div>
+            <div class="childbox7">
+                <h1 class="texth6">EDITOR'S PICKS
+                </h1>
+            </div>
+            <div class="childbox7">
+                <h1 class="texth6">MOST POPULAR</h1>
+            </div>
+        </div>
+        <div class="addsbox">
+            <div class="slidebox2">
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10"
+                                src="a46a7272-5e8e-492d-88bd-ad2be3895142_1.21ff7846eeccdaf2d79fabdb56ec52ff.jpeg"
+                                alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                        <div class="circle3"><img class="img12" src="custom-red.png" alt=""></div>
+
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10"
+                                src="BLACK RHINO BR008 ALPHA 20X10 8 ET-18 MATTE BLACK W SAND LIP-std-700.jpg" alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10"
+                                src="Black-Rhino-Barrage-Wheel-17x8-5-5x127-10mm-Offset-Desert-Sand-On-Matte-Black-DSG-Performance-1_8b533e62-e73e-4cb2-a913-6b9b10aa3742_1024x1024@2x.webp"
+                                alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10"
+                                src="d4fcac36-87b0-47db-a473-fff2a5abce5e_1.68c88722abec908345b9fac1d2c56419.jpeg"
+                                alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10" src="3.jpg" alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10" src="l2.jpg" alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10"
+                                src="d4fcac36-87b0-47db-a473-fff2a5abce5e_1.68c88722abec908345b9fac1d2c56419.jpeg"
+                                alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+                <div class="slide2">
+                    <div class="childbox4">
+                        <div class="imgbox4">
+
+                            <img class="img10" src="2.jpg" alt="">
+                            <img class="img11" src="./k2.jpg" alt="">
+                            <div class="quickbox">
+                                <h5 class="texth">Quick View</h5>
+                            </div>
+                            <button class="button3">QUICK ADD</button>
+                            <div class="heartbox">
+                                <i class="fa-regular fa-heart fa"></i>
+                            </div>
+                        </div>
+                        <div class="txtbox3">
+
+                            <span class="spn2">COLLETTE @</span>
+
+                            <ul class="content4"><span class="spn3">(Product 16) Sample - Wheels..</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="starbox">
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                        <i class="fa-solid fa-star star"></i>
+                    </div>
+                    <div class="starbox2">
+                        <h4 class="texth2">$570.00</h4>
+                    </div>
+                    <div class="starbox2s">
+                        <div class="circle3"><img class="img12" src="dark-gray-custom.png" alt=""></div>
+                        <div class="circle3">
+                            <div class="smallcircle"></div>
+                        </div>
+                    </div>
+                    <div class="starbox3">
+                        <h5 class="txth3">MORE SIZES AVAILABLE</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parent7">
+        <div class="childbox8">
+            <div class="minibox6">
+                <h2 class="text9">LATEST POSTS</h2>
+            </div>
+            <div class="minibox7">
+                <p class="para4">Phasellus lorem malesuada ligula pulvinar cosmo</p>
+            </div>
+        </div>
+        <div class="childbox9">
+            <div class="imgbox5">
+                <div class="picbox">
+                    <img class="img14"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/articles/home-3-blog-1_5ec23100-fbed-4288-8965-48a5f4a411e5_560x.jpg?v=1635821739"
+                        alt="">
+                </div>
+                <div class="picbox2">
+                    <div class="textbox6">
+                        <h3 class="texth7">Commodo Muso Magna Cosmopolis
+                            <div class="line4"></div>
+                        </h3>
+                    </div>
+                    <div class="textbox7">
+                        <h3 class="texth8">FEB 02,2023</h3>
+                    </div>
+                    <div class="textbox8">
+                        <p class="para3">Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin
+                            felis. Pellentesque diam dolor, elementum et lobortis at, mollis ut risus. Sedcuman...</p>
+                    </div>
+                    <div class="textbox9">
+                        <h3 class="texth9">Veiw Details</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="imgbox5">
+                <div class="picbox">
+                    <img class="img14"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/articles/home-3-blog-1_5ec23100-fbed-4288-8965-48a5f4a411e5_560x.jpg?v=1635821739"
+                        alt="">
+                </div>
+                <div class="picbox2">
+                    <div class="textbox6">
+                        <h3 class="texth7">Commodo Muso Magna Cosmopolis
+                            <div class="line4"></div>
+                        </h3>
+                    </div>
+                    <div class="textbox7">
+                        <h3 class="texth8">FEB 02,2023</h3>
+                    </div>
+                    <div class="textbox8">
+                        <p class="para3">Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin
+                            felis. Pellentesque diam dolor, elementum et lobortis at, mollis ut risus. Sedcuman...</p>
+                    </div>
+                    <div class="textbox9">
+                        <h3 class="texth9">Veiw Details</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="imgbox5">
+                <div class="picbox">
+                    <img class="img14"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/articles/home-3-blog-2_560x.jpg?v=1635821643"
+                        alt="">
+                </div>
+                <div class="picbox2">
+                    <div class="textbox6">
+                        <h3 class="texth7">Commodo Muso Magna Cosmopolis
+                            <div class="line4"></div>
+                        </h3>
+                    </div>
+                    <div class="textbox7">
+                        <h3 class="texth8">FEB 02,2023</h3>
+                    </div>
+                    <div class="textbox8">
+                        <p class="para3">Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin
+                            felis. Pellentesque diam dolor, elementum et lobortis at, mollis ut risus. Sedcuman...</p>
+                    </div>
+                    <div class="textbox9">
+                        <h3 class="texth9">Veiw Details</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parent8">
+        <div class="childbox11">
+            <div class="minibox8">
+                <div class="smallboxes3">
+                    <i class="fa-brands fa-instagram insta"></i>
+                </div>
+                <h2 class="texth10">#ELLA ON INSTAGRAM</h2>
+            </div>
+            <div class="minibox9">
+                <p class="para4">Phasellus lorem malesuada ligula pulvinar commodo maecenas</p>
+            </div>
+        </div>
+        <div class="childbox12">
+            <div class="slidebox3">
+                <div class="slidebox4">
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-2.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-1.jpg?v=1635482135"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-3.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-4.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-5.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-6.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-2.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-2.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-2.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                    <div class="slide3">
+                        <img class="img15"
+                            src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-instagram-2.jpg?v=1635482155"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button5">VIEW GALLERY</button>
+
+        <div class="slidebox5">
+            <div class="slidebox6">
+                <div class="slide4"><img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-1-min_210x.jpg?v=1635493976"
+                        alt=""></div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-2-min_210x.jpg?v=1635493990"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-3-min_210x.jpg?v=1635494001"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-4-min_210x.jpg?v=1635494012"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-5-min_210x.jpg?v=1635494024"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-5-min_210x.jpg?v=1635494024"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-4-min_210x.jpg?v=1635494012"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-4-min_210x.jpg?v=1635494012"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-4-min_210x.jpg?v=1635494012"
+                        alt="">
+                </div>
+                <div class="slide4">
+                    <img class="img16"
+                        src="https://new-ella-demo.myshopify.com/cdn/shop/files/home-3-brand-4-min_210x.jpg?v=1635494012"
+                        alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="parent9">
+        <div class="childbox13">
+            <div class="box8">
+                <h2 class="text10">NEWSLETTER SIGN UP</h2>
+            </div>
+            <div class="box9">
+                <p class="para6">Receive our latest updates about our products and promotions.</p>
+            </div>
+        </div>
+        <div class="childbox14">
+            <input placeholder="enter your email address" name="" id="inp2">
+            <button class="button6">SUBMIT</button>
+        </div>
+        <div class="childbox15">
+            <div class="childbox16">
+                <span class="spn4">CATEGORIES</span>
+                <ul class="content5">
+                    <li class="list3">Bibendumetos </li>
+                </ul>
+
+                <ul class="content5">
+                    <li class="list3"> Pellentes Habitanto</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Senectus</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Consequatod</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Scelerisque Yurnas</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Loremouticas</li>
+                </ul>
+            </div>
+            <div class="childbox16">
+                <span class="spn4">FURTHER INFO.</span>
+                <ul class="content5">
+                    <li class="list3">About</li>
+                </ul>
+
+                <ul class="content5">
+                    <li class="list3">Customer Service</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Reward Program</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Shipping & Returns</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Privacy Policy</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Terms & Conditions</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Blog</li>
+                </ul>
+            </div>
+            <div class="childbox16">
+                <span class="spn4">CUSTOMER SERVICE</span>
+                <ul class="content5">
+                    <li class="list3">Search Terms</li>
+                </ul>
+
+                <ul class="content5">
+                    <li class="list3">Advanced Search</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Orders And Returns</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Contact Us</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Theme FAQs</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Consultant</li>
+                </ul>
+                <ul class="content5">
+                    <li class="list3">Store Locations</li>
+                </ul>
+            </div>
+            <div class="childbox17">
+                <div class="lastlogobox">
+                    <img class="img17" src="logo-home-3_50x.png" alt="">
+                </div>
+                <div class="bar3">
+                    <div class="box7">
+                        <i class="fa-solid fa-location-dot loc"></i>
+                    </div>
+                    <p class="para5">
+                        685 Market Street
+                        San Francisco, CA 94105, US
+                    </p>
+                </div>
+                <div class="bar3">
+                    <div class="box7">
+                        <i class="fa-solid fa-phone loc"></i>
+                    </div>
+                    <p class="para5">
+                        Call us: (090) 123-EIIA
+                    </p>
+                </div>
+                <div class="bar3">
+                    <div class="box7">
+                        <i class="fa-solid fa-envelope loc"></i>
+                    </div>
+                    <p class="para5">
+                        Email: example@domain.com
+                    </p>
+                </div>
+                <div class="bar4">
+                    <div class="circle4">
+                        <i class="fa-brands fa-facebook-f fb"></i>
+                    </div>
+                    <div class="circle4">
+                        <i class="fa-brands fa-instagram fb"></i>
+                    </div>
+                    <div class="circle4">
+                        <i class="fa-brands fa-pinterest fb"></i>
+                    </div>
+                    <div class="circle4">
+                        <i class="fa-brands fa-twitter fb"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="barbox3">
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-visa visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-mastercard visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-visa visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-mastercard visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-mastercard visa"></i>
+            </div>
+        </div>
+    </div>
+    <div class="parent10">
+        <div class="lastbox2">
+            <p class="para7">Ella Demo. Powered By Shopify. Shopify Themes By HaloThemes.Com</p>
+        </div>
+        <div class="lastbox3">
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-visa visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-mastercard visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-visa visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-mastercard visa"></i>
+            </div>
+            <div class="minibox10">
+                <i class="fa-brands fa-cc-mastercard visa"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
